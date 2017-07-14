@@ -1,0 +1,22 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: iqfeed-pod
+  labels:
+    name: iqfeed
+spec:
+  containers:
+    - name: iqfeed-container
+      image: master.local:5000/ncllc_iqfeed
+      env:
+        - name: APP_NAME
+          value: REZA_KAMALY_1619
+        - name: APP_VERSION
+          value: Options1.1
+        - name: LOGIN
+          value: "196342"
+        - name: PASSWORD
+          value: "sfnp4g4g"
+  imagePullSecrets:
+    - name: ncllcregistrykey
+

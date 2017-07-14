@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: fetchdata-pod
+  labels:
+    name: fetchdata-pod
+spec:
+  containers:
+    - name: fetchdata-container
+      image: master.local:5000/ncllc_deployment
+      command: ["python"]
+      args: ["feed/fetch_data.py", "-hf", "ssdb-feed-svc", "-pf", "8880", "-hi", "iqfeed-svc", "-pi","9101"]
+  imagePullSecrets:
+    - name: ncllcregistrykey
+  restartPolicy: OnFailure
+

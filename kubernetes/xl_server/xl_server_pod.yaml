@@ -1,0 +1,29 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: xl-server-pod
+  labels:
+    name: xl-server
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: master.local
+  containers:
+    - name: xl-server-container 
+      image: master.local:5000/ncllc_deployment
+      ports:
+        - hostPort: 8001
+          containerPort: 8000
+      env:
+      - name: ssdb_feed_host
+        value: "ssdb-feed-svc"
+      - name: ssdb_feed_port
+        value: "8880"
+      - name: ssdb_post_host
+        value: "ssdb-post-svc"
+      - name: ssdb_post_port
+        value: "8881"
+      command: ["python"]
+      args: ["python/xl/server/server.py"]
+  imagePullSecrets:
+    - name: ncllcregistrykey
+

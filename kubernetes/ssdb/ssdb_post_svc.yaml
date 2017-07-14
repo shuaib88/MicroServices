@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ssdb-post-svc
+spec:
+  selector: 
+    name: ssdb-post
+  ports:
+    - protocol: TCP
+      port: 8881
+      targetPort: 8888

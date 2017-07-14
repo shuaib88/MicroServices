@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ssdb-feed-svc
+spec:
+  selector: 
+    name: ssdb-feed
+  ports:
+    - protocol: TCP
+      port: 8880
+      targetPort: 8888

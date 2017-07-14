@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: iqfeed-svc
+spec:
+  selector: 
+    name: iqfeed
+  ports:
+    - name: historical
+      protocol: TCP
+      port: 9101
+      targetPort: 9101
+    - name: control
+      protocol: TCP
+      port: 5010
+      port: 5010
+

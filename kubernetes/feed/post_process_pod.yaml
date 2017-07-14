@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: postprocess-pod
+  labels:
+    name: postprocess-pod
+spec:
+  containers:
+    - name: postprocess 
+      image: master.local:5000/ncllc_deployment
+      command: ["python"]
+      args: ["etl/post_processing.py", "-hf", "ssdb-feed-svc", "-hp", "ssdb-post-svc", "-pf", "8880", "-pp","8881"]
+  imagePullSecrets:
+    - name: ncllcregistrykey
+  restartPolicy: OnFailure
+

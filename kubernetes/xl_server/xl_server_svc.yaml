@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: xl-server-svc 
+spec:
+  selector: 
+    name: xl-server 
+  ports:
+    - protocol: TCP
+      port: 8001
+      targetPort: 8000

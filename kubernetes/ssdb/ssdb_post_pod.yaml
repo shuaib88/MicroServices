@@ -1,0 +1,24 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: ssdb-post-pod
+  labels: 
+    name: ssdb-post
+spec:
+  containers:
+    - name: ssdb
+      image: master.local:5000/ncllc_ssdb
+      ports:
+        - hostPort: 8881
+          containerPort: 8888
+      volumeMounts: 
+        - mountPath: /var/lib/ssdb
+          name: glusterfsvol
+  volumes:
+    - name: glusterfsvol
+      glusterfs: 
+        endpoints: glusterfs-cluster
+        path: gv_post
+        readOnly: false
+  imagePullSecrets:
+    - name: ncllcregistrykey    
