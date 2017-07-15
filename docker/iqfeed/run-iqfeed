@@ -1,0 +1,10 @@
+#!/bin/bash
+
+. ./iqfeed.conf
+
+export WINEPREFIX=/app/wine-root
+/usr/bin/xvfb-run -s -noreset -a /usr/bin/wine \
+    'c:\\Program Files (x86)\\DTN\\IQFeed\\iqconnect.exe' \
+    -autoconnect &
+
+nodejs proxy.js
