@@ -1,7 +1,7 @@
 # MicroServices
 Micro-Services Architecture for an ETL data pipeline 
 
-The following codebase outlines the architecture of an ETL data pipeline and the microservices architecture that implements it. 
+This repo outlines the architecture of an ETL data pipeline and the microservices architecture that implements it. 
 
 The pod specs and diagram of the system are included, however the actual code base, schema for data structures, are propietary and not included. 
 
