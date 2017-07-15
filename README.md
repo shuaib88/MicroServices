@@ -24,3 +24,6 @@ Fetch Data pod extracts market data from IQFEED based on query arguments includi
 PostProcessing Pod pulled data from SSDB-FEED and transformed further by retrieving detailed options data, adding libor interest rate, and pairing stock option trades with the nearest underlying stock value. Data is serialized into SSDB-POST (underlying gluster volume) and similarly replicated.   
 
 XLServer Pod is a server programmed to respond to queries from user Excel sheets, query SSDB-FEED and SSDB-POST and perform additional transformations and data comparisons.
+
+![Alt text](/XL_SERVER.jpg "XL Server")
+
