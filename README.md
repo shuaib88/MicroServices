@@ -1,5 +1,5 @@
 # MicroServices
-Micro-Services Architecture for an ETL data pipeline 
+Micro-Services Architecture for an ETL data pipeline handling 600 GB+ and 30 million+ data entities. 
 
 This repo outlines the architecture of an ETL data pipeline and the microservices architecture that implements it. 
 
