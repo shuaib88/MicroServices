@@ -6,7 +6,7 @@ The following codebase outlines the architecture of an ETL data pipeline and the
 The pod specs and diagram of the system are included, however the actual code base, schema for data structures, are propietary and not included. 
 
 ## Target System Architecure
-The entire system runs on Linux-Fedora24, data replication is implemented using Gluster File System that maintain two data bricks on each node of the system. 
+The entire system runs on Linux-Fedora24, data replication is implemented using Gluster File System that maintain  data bricks and replicas of each brick on each node of the system.
 
 The cluster consists of a single master which host the Kubernetes critical services, and any number of nodes which can be scaled horizontally to decrease processing time.
 
